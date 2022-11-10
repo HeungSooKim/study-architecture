@@ -17,13 +17,24 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.button0.setOnClickListener{appendExpression("0")}
-
-
-
-
+        binding.button0.setOnClickListener { appendExpression("0") }
+        binding.button1.setOnClickListener { appendExpression("1") }
+        binding.button2.setOnClickListener { appendExpression( "2") }
+        binding.button3.setOnClickListener { appendExpression( "3") }
+        binding.button4.setOnClickListener { appendExpression("4") }
+        binding.button5.setOnClickListener { appendExpression( "5") }
+        binding.button6.setOnClickListener { appendExpression( "6") }
+        binding.button7.setOnClickListener { appendExpression("7") }
+        binding.button8.setOnClickListener { appendExpression( "8") }
+        binding.button9.setOnClickListener { appendExpression("9") }
+        binding.buttonPlus.setOnClickListener { appendExpression("+") }
+        binding.buttonMinus.setOnClickListener { appendExpression("-") }
+        binding.buttonDivide.setOnClickListener { appendExpression("/") }
+        binding.buttonMultiply.setOnClickListener { appendExpression( "*") }
+        binding.buttonEquals.setOnClickListener { calculate() }
+        binding.buttonDelete.setOnClickListener { deleteLastExpression() }
     }
-    
+
     private fun appendExpression(expressionString: String) {
         expression.addExpression(expressionString)
         binding.textView.text = expression.getExpressionString()
